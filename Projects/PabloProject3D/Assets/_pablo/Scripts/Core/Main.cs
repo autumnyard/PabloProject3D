@@ -1,15 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+﻿using UnityEngine;
 
 namespace Pablo
 {
   public class Main : Singleton<Main>
   {
 
-    [ShowInInspector, ReadOnly] private Constants.Scene currentScene = Constants.Scene.None;
-    [ShowInInspector, ReadOnly] private BaseDirector director;
+    [SerializeField, ReadOnly] private Constants.Scene currentScene = Constants.Scene.None;
+    [SerializeField, ReadOnly] private BaseDirector director;
 
     public Constants.Scene CurrentScene => currentScene;
 

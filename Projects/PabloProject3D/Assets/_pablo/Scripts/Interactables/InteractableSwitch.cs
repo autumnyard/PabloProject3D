@@ -1,7 +1,4 @@
-﻿
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Pablo
 {
@@ -25,8 +22,8 @@ namespace Pablo
     }
 
 
-    public Vector3 GetDistanceWithTarget(Vector3 target) => transform.position - target;
-    public float GetDistanceWithTargetMagnitude(Vector3 target) => GetDistanceWithTarget(target).magnitude;
+    public Vector3 GetDistanceWithTarget( Vector3 target ) => transform.position - target;
+    public float GetDistanceWithTargetMagnitude( Vector3 target ) => GetDistanceWithTarget(target).magnitude;
 
     public bool Interact()
     {
@@ -56,6 +53,7 @@ namespace Pablo
       switchState = false;
     }
 
+    [ContextMenu("Switch Toggle")]
     private void SwitchToggle()
     {
       if (switchState == true)
