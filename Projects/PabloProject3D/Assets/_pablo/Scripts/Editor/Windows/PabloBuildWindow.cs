@@ -17,8 +17,18 @@ namespace Pablo
 
     #region UI
 
-    [MenuItem("Chibig/Windows/Build", priority = 2)]
+    [MenuItem("Pablo/Windows/Build", priority = 2)]
     public static void ShowWindow() => GetWindow<PabloBuildWindow>("Build");
+    
+    string myString = "Hello World";
+    bool groupEnabled;
+    bool myBool = true;
+    float myFloat = 1.23f;
+    void OnGUI()
+    {
+        GUILayout.Label("Base Settings", EditorStyles.boldLabel);
+        if(GUILayout.Button("Build")) MakeBuild_Windows_Debug();
+    }
 
     //[Button(ButtonSizes.Large), GUIColor(1, 0, 0, 1)]
     public void Build() => MakeBuild();
@@ -218,13 +228,13 @@ namespace Pablo
       if (custom)
       {
         return new[] {
-          "Assets/_chibig/Scenes/Game.unity",
-          "Assets/_chibig/Scenes/Menu.unity",
-          "Assets/_chibig/Scenes/UIDialogue.unity",
-          "Assets/_chibig/Scenes/UIStatus.unity",
-          "Assets/_chibig/Scenes/Map_Debug0.unity",
-          "Assets/_chibig/Scenes/Map_Debug1.unity",
-          "Assets/_chibig/Scenes/Map_Debug2.unity",
+          "Assets/_pablo/Scenes/Pablo.unity",
+          // "Assets/_pablo/Scenes/Menu.unity",
+          // "Assets/_pablo/Scenes/UIDialogue.unity",
+          // "Assets/_pablo/Scenes/UIStatus.unity",
+          "Assets/_pablo/Scenes/Map_Debug0.unity",
+          "Assets/_pablo/Scenes/Map_Debug1.unity",
+          "Assets/_pablo/Scenes/Map_Debug2.unity",
         };
       }
       else
@@ -259,7 +269,7 @@ namespace Pablo
       {
         fileName += $"-{comment}";
       }
-      buildPlayerOptions.locationPathName = fileName + "/Witch.exe";
+      buildPlayerOptions.locationPathName = fileName + "/Pablo.exe";
       buildPlayerOptions.target = BuildTarget.StandaloneWindows64;
       if (buildType == BuildType.Debug)
       {

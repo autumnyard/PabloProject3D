@@ -14,7 +14,7 @@ namespace Pablo
     [SerializeField, ReadOnly] private bool isLoadingMap = false;
 
 
-    protected override void Log( string text ) => Debug.Log($"<color=orange>[Game] {text}</color>");
+    protected override void Log(string text) => Debug.Log($"<color=orange>[Game] {text}</color>");
 
     private void Awake()
     {
@@ -26,7 +26,11 @@ namespace Pablo
     #region Direction
 
     [ContextMenu("Lock Cursor")]
-    private void LockCursor() => Cursor.lockState = CursorLockMode.Locked;
+    private void LockCursor()
+    {
+      Cursor.lockState = CursorLockMode.Locked;
+      Cursor.visible = false;
+    }
 
     public override void Begin()
     {
@@ -59,7 +63,7 @@ namespace Pablo
     //}
 
     [ContextMenu("Unload Map")]
-    private void UnloadMap( Constants.Map which )
+    private void UnloadMap(Constants.Map which)
     {
 
       Scene asd = SceneManager.GetSceneByName($"Map_{which}");
@@ -71,7 +75,7 @@ namespace Pablo
     }
 
     [ContextMenu("Load Map")]
-    private void LoadMap( Constants.Map which )
+    private void LoadMap(Constants.Map which)
     {
       Log($"Gonna load {which}");
       isLoadingMap = true;
@@ -79,7 +83,7 @@ namespace Pablo
       mapCurrent = which;
     }
 
-    private void LoadMap_Async( AsyncOperation obj )
+    private void LoadMap_Async(AsyncOperation obj)
     {
       obj.allowSceneActivation = true;
       isLoadingMap = false;

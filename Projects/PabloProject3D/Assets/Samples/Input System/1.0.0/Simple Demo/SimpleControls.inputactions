@@ -6,14 +6,6 @@
             "id": "265c38f5-dd18-4d34-b198-aec58e1627ff",
             "actions": [
                 {
-                    "name": "fire",
-                    "type": "Button",
-                    "id": "1077f913-a9f9-41b1-acb3-b9ee0adbc744",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "Tap,SlowTap"
-                },
-                {
                     "name": "move",
                     "type": "Value",
                     "id": "50fd2809-3aa3-4a90-988e-1facf6773553",
@@ -31,17 +23,6 @@
                 }
             ],
             "bindings": [
-                {
-                    "name": "",
-                    "id": "abb776f3-f329-4f7b-bbf8-b577d13be018",
-                    "path": "*/{PrimaryAction}",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "fire",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
                 {
                     "name": "",
                     "id": "e1b8c4dd-7b3a-4db6-a93a-0889b59b1afc",
@@ -109,6 +90,61 @@
                     "isPartOfComposite": true
                 },
                 {
+                    "name": "Arrows",
+                    "id": "3bc96180-6792-40d7-becd-cccfd0422b27",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "d72eef3a-2918-43a1-b2c5-914017c7a3b3",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "MainControlScheme",
+                    "action": "move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "df5d7bd3-de66-435f-889e-bf735784da68",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "MainControlScheme",
+                    "action": "move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "d0364907-a3b7-4196-a74b-5ad7db766a36",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "MainControlScheme",
+                    "action": "move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "9c6b5928-648a-4c59-8788-72cd332bf765",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "MainControlScheme",
+                    "action": "move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
                     "name": "",
                     "id": "c106d6e6-2780-47ff-b318-396171bd54cc",
                     "path": "<Gamepad>/rightStick",
@@ -133,5 +169,22 @@
             ]
         }
     ],
-    "controlSchemes": []
+    "controlSchemes": [
+        {
+            "name": "MainControlScheme",
+            "bindingGroup": "MainControlScheme",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Mouse>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
 }

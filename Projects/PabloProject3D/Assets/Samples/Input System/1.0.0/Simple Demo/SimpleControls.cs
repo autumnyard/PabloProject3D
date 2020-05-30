@@ -19,14 +19,6 @@ public class @SimpleControls : IInputActionCollection, IDisposable
             ""id"": ""265c38f5-dd18-4d34-b198-aec58e1627ff"",
             ""actions"": [
                 {
-                    ""name"": ""fire"",
-                    ""type"": ""Button"",
-                    ""id"": ""1077f913-a9f9-41b1-acb3-b9ee0adbc744"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": ""Tap,SlowTap""
-                },
-                {
                     ""name"": ""move"",
                     ""type"": ""Value"",
                     ""id"": ""50fd2809-3aa3-4a90-988e-1facf6773553"",
@@ -44,17 +36,6 @@ public class @SimpleControls : IInputActionCollection, IDisposable
                 }
             ],
             ""bindings"": [
-                {
-                    ""name"": """",
-                    ""id"": ""abb776f3-f329-4f7b-bbf8-b577d13be018"",
-                    ""path"": ""*/{PrimaryAction}"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""fire"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
                 {
                     ""name"": """",
                     ""id"": ""e1b8c4dd-7b3a-4db6-a93a-0889b59b1afc"",
@@ -122,6 +103,61 @@ public class @SimpleControls : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
+                    ""name"": ""Arrows"",
+                    ""id"": ""3bc96180-6792-40d7-becd-cccfd0422b27"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""move"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""d72eef3a-2918-43a1-b2c5-914017c7a3b3"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""MainControlScheme"",
+                    ""action"": ""move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""df5d7bd3-de66-435f-889e-bf735784da68"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""MainControlScheme"",
+                    ""action"": ""move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""d0364907-a3b7-4196-a74b-5ad7db766a36"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""MainControlScheme"",
+                    ""action"": ""move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""9c6b5928-648a-4c59-8788-72cd332bf765"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""MainControlScheme"",
+                    ""action"": ""move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
                     ""name"": """",
                     ""id"": ""c106d6e6-2780-47ff-b318-396171bd54cc"",
                     ""path"": ""<Gamepad>/rightStick"",
@@ -146,11 +182,27 @@ public class @SimpleControls : IInputActionCollection, IDisposable
             ]
         }
     ],
-    ""controlSchemes"": []
+    ""controlSchemes"": [
+        {
+            ""name"": ""MainControlScheme"",
+            ""bindingGroup"": ""MainControlScheme"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Keyboard>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                },
+                {
+                    ""devicePath"": ""<Mouse>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
+        }
+    ]
 }");
         // gameplay
         m_gameplay = asset.FindActionMap("gameplay", throwIfNotFound: true);
-        m_gameplay_fire = m_gameplay.FindAction("fire", throwIfNotFound: true);
         m_gameplay_move = m_gameplay.FindAction("move", throwIfNotFound: true);
         m_gameplay_look = m_gameplay.FindAction("look", throwIfNotFound: true);
     }
@@ -202,14 +254,12 @@ public class @SimpleControls : IInputActionCollection, IDisposable
     // gameplay
     private readonly InputActionMap m_gameplay;
     private IGameplayActions m_GameplayActionsCallbackInterface;
-    private readonly InputAction m_gameplay_fire;
     private readonly InputAction m_gameplay_move;
     private readonly InputAction m_gameplay_look;
     public struct GameplayActions
     {
         private @SimpleControls m_Wrapper;
         public GameplayActions(@SimpleControls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @fire => m_Wrapper.m_gameplay_fire;
         public InputAction @move => m_Wrapper.m_gameplay_move;
         public InputAction @look => m_Wrapper.m_gameplay_look;
         public InputActionMap Get() { return m_Wrapper.m_gameplay; }
@@ -221,9 +271,6 @@ public class @SimpleControls : IInputActionCollection, IDisposable
         {
             if (m_Wrapper.m_GameplayActionsCallbackInterface != null)
             {
-                @fire.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnFire;
-                @fire.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnFire;
-                @fire.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnFire;
                 @move.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMove;
                 @move.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMove;
                 @move.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMove;
@@ -234,9 +281,6 @@ public class @SimpleControls : IInputActionCollection, IDisposable
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @fire.started += instance.OnFire;
-                @fire.performed += instance.OnFire;
-                @fire.canceled += instance.OnFire;
                 @move.started += instance.OnMove;
                 @move.performed += instance.OnMove;
                 @move.canceled += instance.OnMove;
@@ -247,9 +291,17 @@ public class @SimpleControls : IInputActionCollection, IDisposable
         }
     }
     public GameplayActions @gameplay => new GameplayActions(this);
+    private int m_MainControlSchemeSchemeIndex = -1;
+    public InputControlScheme MainControlSchemeScheme
+    {
+        get
+        {
+            if (m_MainControlSchemeSchemeIndex == -1) m_MainControlSchemeSchemeIndex = asset.FindControlSchemeIndex("MainControlScheme");
+            return asset.controlSchemes[m_MainControlSchemeSchemeIndex];
+        }
+    }
     public interface IGameplayActions
     {
-        void OnFire(InputAction.CallbackContext context);
         void OnMove(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
     }

@@ -135,6 +135,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lightpost (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3067175456281620113, guid: ab4d965d6916a2e4c9ee0741b4ac5bb0,
+        type: 3}
+      propertyPath: m_TagString
+      value: Interactable
+      objectReference: {fileID: 0}
+    - target: {fileID: 3067175456281620114, guid: ab4d965d6916a2e4c9ee0741b4ac5bb0,
+        type: 3}
+      propertyPath: initialSwitchState
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3067175456281620115, guid: ab4d965d6916a2e4c9ee0741b4ac5bb0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -203,6 +213,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lightpost (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3067175456281620113, guid: ab4d965d6916a2e4c9ee0741b4ac5bb0,
+        type: 3}
+      propertyPath: m_TagString
+      value: Interactable
+      objectReference: {fileID: 0}
+    - target: {fileID: 3067175456281620114, guid: ab4d965d6916a2e4c9ee0741b4ac5bb0,
+        type: 3}
+      propertyPath: initialSwitchState
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3067175456281620115, guid: ab4d965d6916a2e4c9ee0741b4ac5bb0,
         type: 3}
@@ -462,6 +482,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lightpost
+      objectReference: {fileID: 0}
+    - target: {fileID: 3067175456281620114, guid: ab4d965d6916a2e4c9ee0741b4ac5bb0,
+        type: 3}
+      propertyPath: initialSwitchState
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3067175456281620115, guid: ab4d965d6916a2e4c9ee0741b4ac5bb0,
         type: 3}

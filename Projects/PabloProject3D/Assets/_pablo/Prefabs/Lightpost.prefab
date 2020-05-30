@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3067175456281620115}
   - component: {fileID: 3067175456281620114}
-  m_Layer: 0
+  - component: {fileID: 5368785912004582857}
+  m_Layer: 9
   m_Name: Lightpost
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +30,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8387536123768839342}
-  - {fileID: 50565675311117661}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -45,8 +45,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 142dfc9511cb132409bb5a38d979bb11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToSwitch: {fileID: 6127461513980156492}
+  objectToSwitch: {fileID: 3067175456902707004}
   initialSwitchState: 1
+--- !u!136 &5368785912004582857
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3067175456281620113}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 5.53
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3067175456902707004
 GameObject:
   m_ObjectHideFlags: 0
@@ -76,7 +90,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.987, z: 0}
   m_LocalScale: {x: 5, y: 1, z: 5}
-  m_Children: []
+  m_Children:
+  - {fileID: 50565675311117661}
   m_Father: {fileID: 8387536123768839342}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -166,12 +181,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6127461513980156492}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.68, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.5380001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 3067175456281620115}
-  m_RootOrder: 1
+  m_Father: {fileID: 3067175456902706992}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &2865864547442269777
 Light:
@@ -184,14 +199,14 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 1, g: 0.9878269, b: 0.7490566, a: 1}
-  m_Intensity: 2
-  m_Range: 20
+  m_Color: {r: 1, g: 0.80094767, b: 0.12641507, a: 1}
+  m_Intensity: 1
+  m_Range: 21.21
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1

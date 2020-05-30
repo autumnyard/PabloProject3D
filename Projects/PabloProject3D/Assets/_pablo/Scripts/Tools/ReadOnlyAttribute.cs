@@ -1,5 +1,4 @@
-﻿#if UNITY_EDITOR
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Pablo
 {
@@ -9,4 +8,3 @@ namespace Pablo
   public class ButtonAttribute : PropertyAttribute { }
   public class ShowInInspectorAttribute : PropertyAttribute { }
 }
-#endif
