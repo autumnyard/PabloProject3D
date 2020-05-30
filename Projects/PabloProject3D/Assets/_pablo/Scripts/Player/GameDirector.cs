@@ -25,12 +25,17 @@ namespace Pablo
 
     #region Direction
 
+    [ContextMenu("Lock Cursor")]
+    private void LockCursor() => Cursor.lockState = CursorLockMode.Locked;
+
     public override void Begin()
     {
       Log(" --- Begin");
       Main.Instance.SetScene(Constants.Scene.Game, this);
       //cam.SetFollowTransform(player);
       LoadMap(mapCurrent);
+
+      LockCursor();
     }
 
     public override void End()

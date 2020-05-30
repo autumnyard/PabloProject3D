@@ -17,4 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_pablo/Scenes/Map_Debug2.unity
     guid: 470d7323cdb95704c898c2c4002ac5e9
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 4f8c11c3afadd26479def3737c7b5da8,
+      type: 2}
