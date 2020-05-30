@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Chibig
+namespace Pablo
 {
   public class SignPost : MonoBehaviour, IInteractable
   {

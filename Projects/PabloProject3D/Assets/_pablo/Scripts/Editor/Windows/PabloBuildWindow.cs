@@ -5,14 +5,14 @@ using UnityEngine;
 
 using UnityEditor;
 
-using Sirenix.OdinInspector.Editor;
+
 using UnityEditor.Build.Reporting;
 using UnityEditor.AddressableAssets.Settings;
 using UnityEditor.AddressableAssets.Settings.GroupSchemas;
 
 namespace Pablo
 {
-  public class PabloBuildWindow : OdinEditorWindow
+  public class PabloBuildWindow : EditorWindow
   {
 
     #region UI
@@ -20,7 +20,7 @@ namespace Pablo
     [MenuItem("Chibig/Windows/Build", priority = 2)]
     public static void ShowWindow() => GetWindow<PabloBuildWindow>("Build");
 
-    [Button(ButtonSizes.Large), GUIColor(1, 0, 0, 1)]
+    //[Button(ButtonSizes.Large), GUIColor(1, 0, 0, 1)]
     public void Build() => MakeBuild();
 
     #endregion
@@ -51,7 +51,7 @@ namespace Pablo
     public BuildType buildType;
 
     [Header("Chibig settings")]
-    [InlineButton("SetCheats")] public bool cheats = false;
+    /*[InlineButton("SetCheats")]*/ public bool cheats = false;
 
     [Header("Unity settings")]
     public bool autoRunPlayer = false;
@@ -137,7 +137,7 @@ namespace Pablo
       }
     }
 
-    [Button, GUIColor(0, 1, 0, 1)]
+    //[Button, GUIColor(0, 1, 0, 1)]
     private void PrintData()
     {
       Print($" ---- Unity build data ----");
@@ -158,7 +158,7 @@ namespace Pablo
     }
 
 
-    [Button, HorizontalGroup("Cleaner")]
+    //[Button, HorizontalGroup("Cleaner")]
     private void ClearReferences()
     {
       //WeatherManager.Instance.DataUnload();
@@ -168,7 +168,7 @@ namespace Pablo
       //WeatherManager.Instance.Skybox.SetTexture("_Tex2", null);
     }
 
-    [Button, HorizontalGroup("Cleaner")]
+    //[Button, HorizontalGroup("Cleaner")]
     private void ClearSaves()
     {
       //FileUtil.DeleteFileOrDirectory("Assets/StreamingAssets/Save/Abraham/");

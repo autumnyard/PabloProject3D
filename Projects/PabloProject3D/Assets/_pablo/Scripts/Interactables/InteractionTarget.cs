@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Chibig
+namespace Pablo
 {
   public class InteractionTarget : MonoBehaviour
   {

@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 
 
-namespace Chibig
+namespace Pablo
 {
   public class TalkBubble : MonoBehaviour
   {

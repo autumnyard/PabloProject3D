@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Chibig
+namespace Pablo
 {
   public class InteractableSwitch : MonoBehaviour, IInteractable
   {
@@ -18,7 +18,7 @@ namespace Chibig
 
     private void Start()
     {
-      if (switchState == true)
+      if (initialSwitchState == true)
         SwitchOn();
       else
         SwitchOff();

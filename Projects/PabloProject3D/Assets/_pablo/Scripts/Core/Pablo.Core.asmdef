@@ -1,6 +1,8 @@
 {
     "name": "Pablo.Core",
-    "references": [],
+    "references": [
+        "GUID:919169b6d88db2a4f8c404c553634b65"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

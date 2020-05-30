@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-using Sirenix.OdinInspector.Editor;
+
 
 namespace Pablo
 {
-  public class PabloMenuWindow : OdinEditorWindow
+  public class PabloMenuWindow : EditorWindow
   {
 
     [MenuItem("Pablo/Windows/Menu", priority = 1)]
@@ -20,9 +20,9 @@ namespace Pablo
     private Color Blue() => new Color32(100, 150, 200, 255); // 
 
 
-    [TitleGroup("Windows")]
+    //[TitleGroup("Windows")]
 
-    [ButtonGroup("Windows/windows"), Button(ButtonSizes.Large)]
+    //[ButtonGroup("Windows/windows"), Button(ButtonSizes.Large)]
     public void ProjectSettings() => EditorApplication.ExecuteMenuItem("Edit/Project Settings...");
 
 

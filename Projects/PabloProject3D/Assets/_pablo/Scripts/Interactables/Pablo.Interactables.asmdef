@@ -1,8 +1,9 @@
 {
-    "name": "Chibig.Interactables",
+    "name": "Pablo.Interactables",
     "references": [
         "GUID:6055be8ebefd69e48b49212b09b47b2f",
-        "GUID:47efffe55b732cb42a84e1ae94fcae84"
+        "GUID:47efffe55b732cb42a84e1ae94fcae84",
+        "GUID:919169b6d88db2a4f8c404c553634b65"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

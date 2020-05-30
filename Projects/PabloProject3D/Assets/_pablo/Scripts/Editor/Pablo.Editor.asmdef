@@ -2,13 +2,8 @@
     "name": "Pablo.Editor",
     "references": [
         "GUID:ccc0eb80b2e9fb744bac3c162dfd8669",
-        "GUID:901c995ac8fed4449bae055aacb60e9e",
-        "GUID:8ebfb868ae9835e4fb64eee53fe21b58",
-        "GUID:4f22a9cb7fc44e54db6e2c15c7d6e27e",
-        "GUID:2d1f1504473665b4fb9a9f6c0de7d2eb",
         "GUID:69448af7b92c7f342b298e06a37122aa",
-        "GUID:e0df83546195e41468e85d825f79cee7",
-        "GUID:b0d912bd318bc354c82ce3722cdaa431"
+        "GUID:919169b6d88db2a4f8c404c553634b65"
     ],
     "includePlatforms": [
         "Editor"
