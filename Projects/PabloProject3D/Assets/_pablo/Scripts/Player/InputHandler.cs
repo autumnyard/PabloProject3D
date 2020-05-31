@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -14,12 +15,17 @@ namespace Pablo
     private Vector2 m_Move;
 
 
-    public void OnMove(InputAction.CallbackContext context)
+    private void Awake()
+    {
+      if (player == null) player = FindObjectOfType<PlayerFirstPerson>();
+    }
+
+    public void OnMove( InputAction.CallbackContext context )
     {
       m_Move = context.ReadValue<Vector2>();
     }
 
-    public void OnLook(InputAction.CallbackContext context)
+    public void OnLook( InputAction.CallbackContext context )
     {
       m_Look = context.ReadValue<Vector2>();
     }
